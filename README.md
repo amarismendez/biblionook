@@ -1,4 +1,4 @@
-# biblionook
+# About BiblioNook
 An organizational app for book lovers.
 
 This app will allow readers to keep a log of the books they have read, and a TBR list of books they'd like to read in the future.
