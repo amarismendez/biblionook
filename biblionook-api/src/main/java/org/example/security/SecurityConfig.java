@@ -36,13 +36,14 @@ public class SecurityConfig {
                         "/library_items",
                         "/library_items/*",
                         "/quotes",
-                        "/quotes/*").permitAll()
+                        "/quotes/*",
+                        "/books").permitAll()
                 .antMatchers(HttpMethod.POST,
-                        "/comments", "/library_items", "/quotes").hasAnyAuthority("ADMIN", "USER")
+                        "/comments", "/library_items", "/quotes", "/books").hasAnyAuthority("ADMIN", "USER")
                 .antMatchers(HttpMethod.PUT,
-                        "/comments/*", "/library_items/*", "/quotes/*").hasAnyAuthority("ADMIN", "USER")
+                        "/comments/*", "/library_items/*", "/quotes/*", "/books/*").hasAnyAuthority("ADMIN", "USER")
                 .antMatchers(HttpMethod.DELETE,
-                        "/comments/*", "/library_items/*", "/quotes/*").hasAnyAuthority("ADMIN", "USER")
+                        "/comments/*", "/library_items/*", "/quotes/*", "/books/*").hasAnyAuthority("ADMIN", "USER")
                 .antMatchers("/**").denyAll()
                 .and()
                 .addFilter(new JwtRequestFilter(authenticationManager(authConfig), converter))
