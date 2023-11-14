@@ -37,7 +37,9 @@ public class SecurityConfig {
                         "/library_items/*",
                         "/quotes",
                         "/quotes/*",
-                        "/books").permitAll()
+                        "/books",
+                        "/googlebooksapi/*",
+                        "/googlebooksapi/isbn/*").permitAll()
                 .antMatchers(HttpMethod.POST,
                         "/comments", "/library_items", "/quotes", "/books").hasAnyAuthority("ADMIN", "USER")
                 .antMatchers(HttpMethod.PUT,
